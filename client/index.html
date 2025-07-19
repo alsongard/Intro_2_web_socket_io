@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Socket IO</title>
+</head>
+<body>
+    
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        const socket = io("http://localhost:3000");
+        // event key: connect
+        socket.on('connect', ()=>{
+            console.log('Connected successfully')
+        });
+        socket.on("chatMessage", (data)=>{
+            console.log(`this is data ${data}`);
+        })
+        
+    </script>
+
+</body>
+</html>
